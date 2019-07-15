@@ -62,16 +62,15 @@ public class linkedlistPractise {
 	}
 	
 	public int sizeLinkedList() {
-		int flag = 0;
+		int flag = 1;
 		Node current =head ;
-		if (current== null) {
-			return 0;
-		}
-		else {
+		while (current.next != null) {
+			flag += 1;
 			current = current.next;
-			flag +=1;
-		}
+			
+			
 		
+		}
 		return flag;
 	}
 	
@@ -83,7 +82,7 @@ public class linkedlistPractise {
 			return;
 		}
 		
-		while (head.data == data) {
+		if(head.data == data) {
 			head = head.next;
 			return;
 		}
@@ -93,11 +92,12 @@ public class linkedlistPractise {
 		while(current.next!= null) {
 		if (current.next.data== data) {
 			current.next = current.next.next;
+			return;
 			
-		}
+		}else {
 		
 			current = current.next;
-		
+		}
 		
 		}
 	}

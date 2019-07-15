@@ -41,6 +41,12 @@ class TestOperations {
 	@Test
 	void testsize() {
 		obj.addFront(1);
+		
+		Assert.assertEquals(1, obj.sizeLinkedList());
+		obj.deleteValue(1);
+		Assert.assertEquals(0, obj.sizeLinkedList());
+		
+		obj.addBack(233);
 		Assert.assertEquals(1, obj.sizeLinkedList());
 		
 	}
@@ -48,12 +54,16 @@ class TestOperations {
 	@Test
 	void testDelete() {
 		
-		obj.addBack(1);
-		obj.addBack(2);
-		obj.addBack(3);
 		
-		obj.deleteValue(2);
+		obj.addBack(1);
+		obj.addBack(23);
+		obj.addBack(25);
+		
+		
+		Assert.assertEquals(3, obj.sizeLinkedList());
+		obj.deleteValue(23);
 		Assert.assertEquals(2, obj.sizeLinkedList());
+		
 		
 	}
 
