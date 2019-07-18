@@ -1,5 +1,7 @@
 package Operations;
 
+import java.util.EmptyStackException;
+
 public class linkedlistPractise {
 	
 	public class Node{
@@ -100,6 +102,27 @@ public class linkedlistPractise {
 		}
 		
 		}
+	}
+	
+	//Stack Push
+	
+	public void push(int data) {
+		
+		Node new_node = new Node( data);
+		
+		new_node.next = head;
+		head = new_node;
+		
+	}
+	
+	//Stack pop
+	
+	public int pop() {
+		
+		if (head == null) throw new EmptyStackException();
+		int data=  head.data;
+		head = head.next;
+		return data;
 	}
 
 }
